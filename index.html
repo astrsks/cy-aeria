@@ -47,13 +47,29 @@
 
     <section id="projects" class="card">
       <h2>Contents</h2>
-      <p>tbe.</p>
-      <ul>
-        <!-- <li><strong></li>
-        <li><strong></li>
-        <li><strong></li> -->
-      </ul>
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <div class="carousel-item">
+            <div class="image-wrapper">
+              <img src="ch1.png" alt="ch1" />
+              <a href="https://www.facebook.com/share/p/1LDM89YPxC/" class="btn-view-more">View More</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="image-wrapper">
+              <img src="ch2.png" alt="ch2" />
+              <!-- <a href="your-link2.html" class="btn-view-more">View More</a> -->
+            </div>
+          </div>
+          <!-- Add more images as needed -->
+        </div>
+
+        <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+      </div>
     </section>
+
+
 
     <section id="contact" class="card">
       <h2>Contact</h2>
@@ -68,5 +84,34 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  const carousel = document.querySelector('.carousel');
+  const items = document.querySelectorAll('.carousel-item');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel();
+  });
+
+  // Optional: Disable buttons if only one image
+  if (items.length <= 1) {
+    nextBtn.style.display = 'none';
+    prevBtn.style.display = 'none';
+  }
+</script>
 </body>
 </html>
