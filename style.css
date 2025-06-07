@@ -258,3 +258,19 @@ header {
   right: 10px;
 }
 
+@media (max-width: 600px) {
+  .carousel-btn {
+    font-size: 1.4rem;
+    padding: 8px;
+  }
+
+  .btn-view-more {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  .image-wrapper {
+    padding: 0 10px; /* Add some side padding */
+  }
+}
+
