@@ -8,8 +8,10 @@
 }
 
 html {
+  scroll-padding-top: 160px; /* adjust to your header height */
   scroll-behavior: smooth;
 }
+
 
 * {
   margin: 0;
@@ -18,6 +20,7 @@ html {
 }
 
 body {
+  padding-top: 60px;
   background-color: var(--bg);
   color: var(--fg);
   font-family: 'Inter', sans-serif;
@@ -107,7 +110,6 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   color: var(--muted);
-  font-style: italic;
   font-size: 0.9rem;
   border-top: 1px dashed var(--border);
 }
@@ -142,6 +144,18 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg); /* background */
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
 .header-nav ul {
   display: flex;
   justify-content: center;
@@ -154,8 +168,9 @@ header {
 .header-nav a {
   color: var(--muted);
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
   position: relative;
+  padding: 0.3rem 0.5rem;
 }
 
 .header-nav a::after {
@@ -271,4 +286,80 @@ header {
   .image-wrapper {
     padding: 0; 
   }
+}
+
+#contact-footer {
+  background: var(--bg);
+  color: var(--fg);
+  padding: 3rem 1rem 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: var(--fg);
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent);
+}
+
+.game-uids {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.game-uids h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-uids ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.anchor-offset {
+  position: relative;
+  padding-top: 60px; /* same as your header height */
+  height: 0;
+  visibility: hidden;
 }
